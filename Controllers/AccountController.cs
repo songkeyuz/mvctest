@@ -14,6 +14,10 @@ namespace mvctest.Controllers
         {
             return View();
         }
+        public IActionResult UserList()
+        {
+            return View();
+        }
 
         public Result DoLogin(string username,string password)
         {

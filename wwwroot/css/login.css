@@ -1,0 +1,9 @@
+
+div .form-group span{
+  color: red;
+  font-size: 10px;
+}
+
+div .form-group .hint{
+  display: none;
+}

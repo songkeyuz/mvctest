@@ -17,7 +17,6 @@ window.onload = function () {
             username: $("#UserName").val(),
             password: $("#Password1").val(),
         }
-
         if ($.trim($("#UserName").val()).length == 0) {
             $("#user").removeClass("hint");
             setTimeout(function () {
