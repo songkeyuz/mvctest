@@ -1,1 +1,62 @@
-fjfjj
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+<link href="~/css/bootstrapValidator.min.css" rel="stylesheet">
+<link href="~/css/toastr.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="~/css/login.css" />
+<style>
+.error{
+	color:red;
+}
+</style>
+
+<form id="UserLogIn">
+    <div id="logIn" style="width: 400px; margin: 100px auto;">
+        <p class="text-center">用户登录</p>
+        <div class="form-group" id="us">
+            <input type="text" class="form-control" name="username" id="UserName" placeholder="username">
+            <!-- <span class="hint" id="user">请输入用户名</span> -->
+        </div>
+        <div class="form-group" id="pd">
+            <input type="password" class="form-control" name="password" id="Password1" placeholder="Password">
+            <!-- <span class="hint" id="pwd">请输入用户密码</span> -->
+        </div>
+
+        <button type="submit" class="btn btn-primary " id="userLogIn" 
+            style="height:36px; font-size:15px;  width:150px;">登录</button>
+        
+    </div>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.Validate.min.js"></script>
+<script src="~/js/toastr.min.js"></script>
+<script asp-append-version="true">
+   $().ready(function() {
+// 在键盘按下并释放及提交后验证提交表单
+  $("#UserLogIn").validate({
+      rules: {
+        username: {
+            required: true,
+            minlength: 2
+        },
+        password: {
+            required: true,
+            minlength: 5
+        }
+      },
+      messages: {
+        username: {
+            required: "请输入用户名",
+            minlength: "用户名不得少于2个字符"
+        },
+        password: {
+            required: "请输入密码",
+            minlength: "密码长度不能小于 5 个字符"
+        }
+      }
+  });
+  })
+</script>
